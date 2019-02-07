@@ -1,4 +1,5 @@
 import discord
+import os
 
 client = discord.Client()
 
@@ -19,5 +20,5 @@ async def on_message(message):
     if message.content.startswith('hi'):
         await client.send_message(message.channel, "hello world!")
 
-
-client.run('NTMyNDExMTY5MDgwNjA2NzUz.DyRPoQ.pNEE2GEAvTXYLl9jWJB9YNMOA08')
+access_token = os.environ["BOT_TOKEN"]
+client.run(access_token)
